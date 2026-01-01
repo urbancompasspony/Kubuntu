@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# RUN THIS WITH CLI!
-# curl -sSL https://raw.githubusercontent.com/urbancompasspony/Kubuntu/refs/heads/main/00-Base | bash
-
 MENU_VERSION="v1.0 - 01-01-2026"
 
 export list01="build-essential docker-buildx docker.io openjdk-11-jre distrobox \

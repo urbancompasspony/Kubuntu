@@ -4,7 +4,8 @@ sudo apt install waydroid
 
 sudo waydroid init -s GAPPS
 
-binder_linux-dkms
 sudo modprobe binder-linux devices=binder,hwbinder,vndbinder
 
 waydroid show-full-ui
+
+sudo systemctl enable --now waydroid-container

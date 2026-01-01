@@ -172,7 +172,7 @@ Pin: version 2:1snap*
 Pin-Priority: -1
 ' | sudo tee /etc/apt/preferences.d/thunderbird
 
-    sudo apt install thunderbird thunderbird-locale-pt-br
+    sudo apt install thunderbird thunderbird-locale-pt-br -y
 
     # Google Chrome
     clear; echo "Baixando Google Chrome"

@@ -249,7 +249,7 @@ function onlyoffice0 {
     rm mscorefonts.zip
     fc-cache --force
 
-    sudo apt modernize-sources
+    sudo apt modernize-sources -y
     sudo touch /etc/.officeok
   fi
 }

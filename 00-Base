@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-MENU_VERSION="v3.8 - 05-10-2025"
+MENU_VERSION="v1.0 - 01-01-2026"
 
-export list01="build-essential \
+export list01=" \
 cabextract chromium-codecs-ffmpeg-extra fonts-liberation gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi liba52-0.7.4 libaribb24-0 libavcodec-extra \
 net-tools netdiscover iperf arp-scan traceroute speedtest-cli whois openvpn curl dialog duf \
 gparted gnome-disk-utility vlc kolourpaint cpu-x \
@@ -11,8 +11,16 @@ printer-driver-escpr hplip printer-driver-all \
 stress lm-sensors cmatrix btop inxi tree dialog btrfs-progs filelight libreoffice libreoffice-l10n-pt-br \
 libssl3 pcscd opensc xmlstarlet \
 xrdp xorgxrdp openssh-server \
-adsys adsys-windows samba-ad-dc sssd-ad sssd-tools realmd adcli smb4k distrobox \
+smb4k distrobox \
 docker.io qemu-system qemu-utils qemu-user qemu-kvm qemu-guest-agent libvirt-clients libvirt-daemon-system bridge-utils virt-manager ovmf dnsmasq genisoimage guestfs-tools screen jq"
+
+sudo apt install build-essential docker-buildx docker.io \
+qemu-user qemu-system libvirt-dbus bridge-utils virt-manager ovmf dnsmasq \
+filelight smb4k libasound2:i386 pipewire-alsa:i386 libpulse0:i386 gstreamer1.0-plugins-good:i386 plasma-disks kolourpaint granatier okteta krename timeshift kget gnome-nettool duf detox fdupes keepassxc \
+iperf traceroute arp-scan speedtest-cli samba rsync rclone sshpass curl rclone openvpn qbittorrent nmap yt-dlp smartmontools \
+7zip zip unzip dialog btrfs-progs cifs-utils inxi btop iotop cmatrix parallel rdesktop rpi-imager adb webp-pixbuf-loader gthumb catfish \
+torbrowser-launcher tree gparted gnome-disk-utility k3b audacity libreoffice libreoffice-l10n-pt-br openjdk-11-jre remmina kpat gimp blender obs-studio kdenlive wine \
+luanti steam terminator trippy kio-gdrive bup kpat snapper xmlstarlet isoimagewriter jq freerdp3-wayland protontricks haruna
 
 # ======================================================================================================================================================== #
 

@@ -198,6 +198,11 @@ Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla &&
 
     sudo apt update; sudo apt install firefox -y
+
+    echo "Architectures: amd64" | sudo tee -a /etc/apt/sources.list.d/google-chrome.sources
+
+    echo "Architectures: amd64" | sudo tee -a /etc/apt/sources.list.d/microsoft-edge.sources
+
     sudo touch /etc/.browserok
   fi
 }

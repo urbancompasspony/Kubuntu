@@ -1,0 +1,3 @@
+
+Edit /etc/apt/sources.list.d/...source file, add at the end:
+Architectures: amd64

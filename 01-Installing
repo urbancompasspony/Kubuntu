@@ -7,7 +7,7 @@ filelight smb4k libasound2:i386 pipewire-alsa:i386 libpulse0:i386 gstreamer1.0-p
 iperf traceroute arp-scan speedtest-cli samba rsync rclone sshpass curl rclone openvpn qbittorrent nmap yt-dlp smartmontools \
 7zip zip unzip dialog btrfs-progs cifs-utils inxi btop iotop cmatrix parallel rdesktop rpi-imager adb webp-pixbuf-loader gthumb catfish \
 torbrowser-launcher tree gparted gnome-disk-utility k3b audacity libreoffice libreoffice-l10n-pt-br openjdk-11-jre vlc remmina kpat gimp blender obs-studio kdenlive wine \
-luanti steam terminator trippy kio-gdrive bup kpat snapper xmlstarlet isoimagewriter jq freerdp3-wayland gimp
+luanti steam terminator trippy kio-gdrive bup kpat snapper xmlstarlet isoimagewriter jq freerdp3-wayland gimp blender
 
 sudo add-apt-repository ppa:mozillateam/ppa
 

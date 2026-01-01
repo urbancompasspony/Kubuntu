@@ -36,7 +36,7 @@ function root_check0 {
 }
 
 function welcome0 {
-  clear; echo ""; echo "Preparo do $(lsb_release -ds) by SuitIT® - $MENU_VERSION"; echo ""
+  clear; echo ""; echo "Preparo do $(lsb_release -ds) by Zoio The Green Eye® - $MENU_VERSION"; echo ""
   echo "Insira a senha do usuário $USER"; echo ""
   sudo echo . >/dev/null
   echo ""; echo "5"; sleep 1; echo "4"; sleep 1; echo "3"; sleep 1; echo "2"; sleep 1; echo "1"; sleep 1
@@ -179,10 +179,6 @@ function dwservice0 {
   chmod +x dwagent_x86.sh
 }
 
-function ADDCJoin0 {
-  sudo pam-auth-update --enable mkhomedir
-}
-
 function flatpak0 {
   sudo apt install flatpak plasma-discover-backend-flatpak -y &&
   clear
@@ -192,17 +188,10 @@ function flatpak0 {
 
 function appsflat0 {
   flatpak install com.anydesk.Anydesk \
-  us.zoom.Zoom \
-  com.thincast.client \
   org.remmina.Remmina \
   com.usebottles.bottles \
-  org.mozilla.Thunderbird \
-  com.ktechpit.whatsie \
   com.github.tchx84.Flatseal \
-  uno.platform.uno-calculator \
-  io.missioncenter.MissionCenter \
-  org.kde.kpat \
-  net.codelogistics.webapps --noninteractive -y
+  io.missioncenter.MissionCenter --noninteractive -y
   clear
 }
 
@@ -267,7 +256,6 @@ sysctl0
 fstab0
 browsers0
 dwservice0
-ADDCJoin0
 flatpak0
 appsflat0
 onlyoffice0

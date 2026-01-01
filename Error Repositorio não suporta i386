@@ -1,0 +1,5 @@
+
+Nota: Pulando a aquisição do arquivo configurado 'main/binary-i386/Packages', pois o repositório 'https://packages.microsoft.com/repos/edge stable InRelease' não tem suporte à arquitetura 'i386'
+
+Edit /etc/apt/sources.list.d/...source file, add at the end:
+Architectures: amd64

@@ -8,3 +8,112 @@ iperf traceroute arp-scan speedtest-cli samba rsync rclone sshpass curl rclone o
 7zip zip unzip dialog btrfs-progs cifs-utils inxi btop iotop cmatrix parallel rdesktop rpi-imager adb webp-pixbuf-loader gthumb catfish \
 torbrowser-launcher tree gparted gnome-disk-utility k3b audacity libreoffice libreoffice-l10n-pt-br openjdk-11-jre vlc remmina kpat gimp blender obs-studio kdenlive wine \
 luanti steam terminator trippy kio-gdrive bup kpat snapper xmlstarlet isoimagewriter jq freerdp3-wayland
+
+sudo add-apt-repository ppa:mozillateam/ppa
+
+echo '
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+Package: thunderbird
+Pin: version 2:1snap*
+Pin-Priority: -1
+
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+Package: thunderbird-locale-pt
+Pin: version 2:1snap*
+Pin-Priority: -1
+
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+Package: thunderbird-locale-pt-br
+Pin: version 2:1snap*
+Pin-Priority: -1
+' | sudo tee /etc/apt/preferences.d/thunderbird
+
+sudo apt install thunderbird thunderbird-locale-pt-br
+
+sudo apt modernize-sources
+
+# GRUB PARAMETERS #
+Want Mitigations Off? sudo nano /etc/default/grub
+If Systemd-boot: sudo nano /etc/kernel/cmdline
+mitigations=off
+sudo update-grub2
+
+Rebboot!
+
+Ajustar DPI
+Ajustar brilho de tela
+Ajustar RedShift (manual local)
+Ajustar energia/bateria
+
+# Configuração essencial do Plasma
+Mouse e Touch > Bordas de Tela > Mudar a borda pra superior direita
+Teclado > Num Lock ao Iniciar o Plasma
+Teclado > Teclado Virtual > Habilitar Maliit
+Teclado > Atalho > Monitor do Sistema: CTRL+ALT+DEL
+Multimidia > Procurar desativar "procurar musicbrains e freedb"
+Cores e Temas > Decorações de Janelas > ( ... ) > Decorações da Barra de Titulos (to close on left, like macOS)
+Gerenciamento de Janelas > Comportamento de Janelas > FOCO > 300ms to 150ms
+Bloqueio de Tela > Bloquear Automaticamente NEVER, manter travado depois de acordar
+
+# Dolphin
+Lixeira > Excluir arquivos mais antigos que 7 dias
+Menu de Contexto > Add EXCLUIR
+Show thumbs for Network Folders 10mb
+Mudar para que ele exiba a pasta /home/ztge por padrão e não as pastas da ultima sessão!
+
+# Konsole
+Geral > Mostrar titulo na barra de titulo
+Editar Perfil > Aparencia > Escolher Fonte (Definir tamanho 13!) e tema verde.
+Perfil > Aparencia > Cursor > Intermitencia ON
+Mouse > Copiar ao Selecionar
+
+# KCalc:
+Trocar fontes para 15, todas as 3.
+Mostrar o resultado no titulo de janela.
+
+# Kate:
+Abra o Kate e vá até Configurações > Configurar Kate.
+No menu lateral, escolha EDIÇÃO > RECUO.
+Mude o espaçamento de 4 pra 2 caracteres
+
+Edit Desktop to add Widgets accordingly!
+
+# Favoritos
+Spectacle
+KCalc
+
+# Use Weather applet from:
+https://github.com/blackadderkate/weather-widget-2/releases/tag/V3.0.4
+
+# SplashScreen
+https://github.com/smokey5787/Cubed-Splash-EOS/releases/tag/1.0
+
+# Fonts
+Install all fonts from Particular, even MS FONTS are included.
+
+####################################
+# VIRTUAL KEYBOARD FOR TOUCHSCREEN #
+
+sudo nano /etc/sddm.conf.d/virtualkbd.conf
+[General]
+InputMethod=qtvirtualkeyboard
+
+#sudo cp ~/.config/kwinoutputconfig.json /var/lib/sddm/.config/
+#sudo chown sddm:sddm /var/lib/sddm/.config/kwinoutputconfig.json
+
+##############
+# FINISHING! #
+
+sudo systemctl enable --now sshd cronie docker libvirtd lact
+
+To fstab:
+//172.20.0.2/particular /mnt/particular cifs credentials=/home/ztge/.smb,iocharset=utf8,file_mode=0777,dir_mode=0777,noperm,user,vers=2.1,nofail,noauto 0 0
+
+If connected to network will try mounting, do not use it unless really needed!
+x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.device-timeout=3

@@ -24,7 +24,8 @@ vlc haruna k3b audacity obs-studio kdenlive \
 libreoffice libreoffice-l10n-pt-br \
 blender \
 wine-stable winetricks protontricks steam luanti \
-rocminfo rocm-smi hipcc radeontop opencl-clhpp-headers  opencl-headers \
+rocminfo rocm-smi hipcc radeontop opencl-clhpp-headers opencl-headers \
+qml6-module-qtwayland-compositor qml6-module-org-kde-plasma-plasma5support \
 terminator adb liblchown-perl"
 
 # ======================================================================================================================================================== #

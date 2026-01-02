@@ -198,9 +198,6 @@ Pin: origin packages.mozilla.org
 Pin-Priority: 1000
 ' | sudo tee /etc/apt/preferences.d/mozilla &&
 
-    echo "Architectures: amd64" | sudo tee -a /etc/apt/sources.list.d/google-chrome.sources
-    echo "Architectures: amd64" | sudo tee -a /etc/apt/sources.list.d/microsoft-edge.sources
-
     sudo apt update
     sudo apt upgrade -y
     sudo apt install firefox -y  
@@ -257,6 +254,10 @@ function onlyoffice0 {
     fc-cache --force
 
     sudo apt modernize-sources -y
+
+    echo "Architectures: amd64" | sudo tee -a /etc/apt/sources.list.d/google-chrome.sources
+    echo "Architectures: amd64" | sudo tee -a /etc/apt/sources.list.d/microsoft-edge.sources
+
     sudo touch /etc/.officeok
   fi
 }

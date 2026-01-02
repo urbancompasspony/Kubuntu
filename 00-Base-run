@@ -71,7 +71,7 @@ EOF
   sync &&
 
   sudo -E usermod -aG docker "$USER"
-  sudo -E usermod -aG render "$USER"
+  sudo -E usermod -aG render,video "$USER"
 }
 
 function token0 {
